@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -21,7 +22,7 @@ public class Main {
          */
         try {
             input = bufferedReader.readLine();
-            inputList.addAll(Arrays.stream(input.replaceAll("\\s+$", "").split(" ")).toList());
+            inputList.addAll(Arrays.stream(input.replaceAll("\\s+$", "").split(" ")).collect(Collectors.toList()));
             for (String arrayEntry : inputList)
                 parsedInputList.add(Integer.parseInt(arrayEntry));
             intOnlyListFlag = true;
